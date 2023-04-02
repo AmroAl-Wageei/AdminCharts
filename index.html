@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./style.css" />
+    <!-- CSS -->
+
+    <!-- Title Icon   -->
+    <link rel="icon" href="./images/diagram 1.png" type="image/icon type" />
+    <!-- Title Icon   -->
+
+    <!-- Heat Map -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css"
+    />
+    <!-- Heat Map -->
+
+    <!-- Font Awsome -->
+    <script
+      src="https://kit.fontawesome.com/3692f58ddc.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Font Awsome -->
+
+    <!-- Chart Js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels.js"></script>
+    <!-- Chart Js -->
+  </head>
+
+  <style>
+    .chartMenu p {
+      padding: 10px;
+      font-size: 20px;
+    }
+    .chartCard {
+      height: 300px;
+      background: rgba(54, 162, 235, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .chartBox {
+      width: 500px;
+      padding: 20px;
+      border-radius: 20px;
+      background: white;
+    }
+
+    /* Style MAP */
+
+    #map {
+      height: 500px;
+      width: 90%;
+      margin: 0 140px 0 120px;
+      background: #191c32;
+      border-radius: 10px;
+    }
+
+    .info {
+      padding: 6px 8px;
+      font: 14px/16px Arial, Helvetica, sans-serif;
+      background: white;
+      background: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+    }
+    .info h4 {
+      margin: 0 0 5px;
+      color: #777;
+    }
+
+    .legend {
+      line-height: 18px;
+      color: #161212;
+    }
+    .legend i {
+      width: 18px;
+      height: 18px;
+      float: left;
+      margin-right: 8px;
+      opacity: 0.7;
+    }
+    /* Style MAP */
+  </style>
+
+  <body>
+    <!-- Sidebar -->
+
+    <div class="sidebar">
+      <div class="sidebar-brand">
+        <h1>
+          <img src="./images/diagram 1.png" alt="Logo" class="logoMain" />
+        </h1>
+      </div>
+      <div class="sidebar-menu">
+        <ul>
+          <li>
+            <a href="#" class="active"
+              ><span>
+                <abbr title="Home">
+                  <i class="fa-solid fa-house"></i
+                ></abbr> </span
+            ></a>
+          </li>
+          <li>
+            <a href="./status.html"
+              ><span>
+                <abbr title="Status"
+                  ><i class="fa-solid fa-chart-line"></i
+                ></abbr> </span
+            ></a>
+          </li>
+          <li>
+            <a href="#"
+              ><span>
+                <abbr title="SMS"
+                  ><i class="fa-solid fa-message"></i
+                ></abbr> </span
+            ></a>
+          </li>
+          <li>
+            <a href="#"
+              ><span>
+                <abbr title="Setting"
+                  ><i class="fa-solid fa-gear"></i
+                ></abbr> </span
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+
+    <!-- Navbar -->
+
+    <div class="main-content">
+      <header>
+        <h2>
+          <label for="nav-toggle">
+            <span>
+              <i class="fa-sharp fa-solid fa-circle-chevron-down"></i
+            ></span>
+          </label>
+          <!-- Dashboard -->
+        </h2>
+
+        <div class="search">
+          <input type="text" placeholder="search here" name="search" />
+          <label for="search"> <i class="fas fa-search"></i></label>
+        </div>
+
+        <div class="user-wrapper">
+          <img
+            src="./images/user.png"
+            alt="User-Pic"
+            width="30px"
+            height="30px"
+          />
+          <div>
+            <h4>Majed Ali</h4>
+            <small> Project Manager</small>
+          </div>
+        </div>
+      </header>
+    </div>
+
+    <!-- Navbar -->
+
+    <!-- Main Content -->
+
+    <main>
+      <div class="yes">
+        <div class="all">
+          <!-- Card or Box -->
+          <div class="cards">
+            <div class="card">
+              <div class="card-content">
+                <div class="name">
+                  <span><i class="fa-solid fa-wave-square"></i></span> Average
+                  Price
+                </div>
+                <div class="number">
+                  <span id="num">200</span>
+                  <span><i class="fa-solid fa-dollar-sign"></i></span>
+                </div>
+                <div class="icon-box" id="lineee"></div>
+                <div class="location">
+                  <span><i class="fa-solid fa-location-dot"></i></span>
+                  <span>Jordan,amman</span>
+                </div>
+              </div>
+            </div>
+            <div class="card two">
+              <div class="card-content">
+                <div class="name">
+                  <span><i class="fa-solid fa-turn-down"></i></span> Min Price
+                </div>
+                <div class="number">
+                  <span id="num">150</span>
+                  <span><i class="fa-solid fa-dollar-sign"></i></span>
+                </div>
+                <div class="icon-box" id="lineee"></div>
+                <div class="location">
+                  <span><i class="fa-solid fa-location-dot"></i></span>
+                  <span>Jordan,amman</span>
+                </div>
+              </div>
+            </div>
+            <div class="card three">
+              <div class="card-content">
+                <div class="name">
+                  <span><i class="fa-solid fa-turn-up"></i></span> Max Price
+                </div>
+                <div class="number">
+                  <span id="num">400</span>
+                  <span><i class="fa-solid fa-dollar-sign"></i></span>
+                </div>
+                <div class="icon-box" id="lineee"></div>
+                <div class="location">
+                  <span><i class="fa-solid fa-location-dot"></i></span>
+                  <span>Jordan,amman</span>
+                </div>
+              </div>
+            </div>
+            <div class="card four">
+              <div class="card-content">
+                <div class="name">
+                  <span><i class="fa-solid fa-circle-right"></i></span> Best
+                  Price
+                </div>
+                <div class="number">
+                  <span id="num">355</span>
+                  <span><i class="fa-solid fa-dollar-sign"></i></span>
+                </div>
+                <div class="icon-box" id="lineee"></div>
+                <div class="location">
+                  <span><i class="fa-solid fa-location-dot"></i></span>
+                  <span>Jordan,amman</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Card or Box -->
+
+          <!-- Charts -->
+          <div class="charts">
+            <!-- Product Chart -->
+            <div class="ProuductChart">
+              <h2>Prouduct Chart</h2>
+              <canvas id="ProChart"></canvas>
+            </div>
+            <!-- Product Chart -->
+
+            <!-- Customer Impression and Progress Chart -->
+            <div class="chartFlex">
+              <!-- Customer Impression -->
+              <div class="CustomerImpressionChart">
+                <h2>Customer Impression</h2>
+                <div class="chartBox">
+                  <canvas id="LineChart"></canvas>
+                </div>
+              </div>
+              <!-- Customer Impression -->
+
+              <!-- Progress Chart -->
+              <div class="ProgressChart" id="doughnut-chart">
+                <h2>Progress</h2>
+                <canvas id="ProductChart"></canvas>
+              </div>
+              <!-- Progress Chart -->
+            </div>
+            <!-- Customer Impression and Progress Chart -->
+
+            <!-- Review Table -->
+            <div class="review">
+              <div class="heading">
+                <h2>Review <span> | 214 total</span></h2>
+                <a href="#" class="btn"> View All</a>
+              </div>
+
+              <div class="table_responsive">
+                <table>
+                  <thead>
+                    <td><div class="circle"></div></td>
+                    <td>Name</td>
+                    <td>Social Media</td>
+                    <td>Comment</td>
+                    <td>Emoji</td>
+                  </thead>
+
+                  <tbody>
+                    <tr>
+                      <hr class="hr" />
+                      <td>
+                        <div class="img-box-small">
+                          <img src="./images/table/1.png" alt="" />
+                        </div>
+                      </td>
+                      <td class="name">
+                        Khaled ali
+                        <p class="title-table">Sales</p>
+                      </td>
+                      <td>
+                        <span class="socialMedia">
+                          <i class="fa-brands fa-facebook"></i
+                        ></span>
+                        Facebook
+                      </td>
+
+                      <td>
+                        Good product...
+                        <span> <i class="fa-solid fa-plus"></i></span>
+                      </td>
+                      <td>
+                        <div class="all-emoji">
+                          <div class="emoji">
+                            <div>
+                              <i class="fa-regular fa-face-surprise"></i>
+                            </div>
+                            <div>34</div>
+                          </div>
+                          <div class="emoji">
+                            <div><i class="fa-solid fa-face-sad-cry"></i></div>
+                            <div>21</div>
+                          </div>
+                          <div class="emoji">
+                            <div><i class="fa-solid fa-thumbs-up"></i></div>
+                            <div>68</div>
+                          </div>
+                          <div class="emoji">
+                            <div><i class="fa-solid fa-heart"></i></div>
+                            <div>4</div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="img-box-small">
+                          <img src="./images/table/2.png" alt="" />
+                        </div>
+                      </td>
+                      <td class="name">
+                        Nour majed
+                        <p class="title-table">CEO</p>
+                      </td>
+                      <td>
+                        <span class="socialMedia">
+                          <i class="fa-brands fa-square-instagram"></i
+                        ></span>
+                        Instagram
+                      </td>
+                      <td>
+                        Bad product...
+                        <span> <i class="fa-solid fa-plus"></i></span>
+                      </td>
+                      <td>
+                        <div class="all-emoji">
+                          <div class="emoji">
+                            <div>
+                              <i class="fa-regular fa-face-surprise"></i>
+                            </div>
+                            <div>34</div>
+                          </div>
+                          <div class="emoji">
+                            <div><i class="fa-solid fa-face-sad-cry"></i></div>
+                            <div>21</div>
+                          </div>
+                          <div class="emoji">
+                            <div><i class="fa-solid fa-thumbs-up"></i></div>
+                            <div>68</div>
+                          </div>
+                          <div class="emoji">
+                            <div><i class="fa-solid fa-heart"></i></div>
+                            <div>4</div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="img-box-small">
+                          <img src="./images/table/3.png" alt="" />
+                        </div>
+                      </td>
+                      <td class="name">
+                        Ahmed salem
+                        <p class="title-table">Digital Marketing</p>
+                      </td>
+                      <td>
+                        <span class="socialMedia"
+                          ><i class="fa-brands fa-twitter"></i
+                        ></span>
+                        Twiter
+                      </td>
+                      <td>
+                        My opinion ...
+                        <span> <i class="fa-solid fa-plus"></i></span>
+                      </td>
+                      <td>
+                        <div class="all-emoji">
+                          <div class="emoji">
+                            <div>
+                              <i class="fa-regular fa-face-surprise"></i>
+                            </div>
+                            <div>34</div>
+                          </div>
+                          <div class="emoji">
+                            <div><i class="fa-solid fa-face-sad-cry"></i></div>
+                            <div>21</div>
+                          </div>
+                          <div class="emoji">
+                            <div><i class="fa-solid fa-thumbs-up"></i></div>
+                            <div>68</div>
+                          </div>
+                          <div class="emoji">
+                            <div><i class="fa-solid fa-heart"></i></div>
+                            <div>4</div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="img-box-small">
+                          <img src="./images/table/4.png" alt="" />
+                        </div>
+                      </td>
+                      <td class="name">
+                        Maya jamel
+                        <p class="title-table">Call Center</p>
+                      </td>
+                      <td>
+                        <span class="socialMedia">
+                          <i class="fa-brands fa-square-snapchat"></i
+                        ></span>
+                        Snapchat
+                      </td>
+                      <td>
+                        Best product...
+                        <span> <i class="fa-solid fa-plus"></i></span>
+                      </td>
+                      <td>
+                        <div class="all-emoji">
+                          <div class="emoji">
+                            <div>
+                              <i class="fa-regular fa-face-surprise"></i>
+                            </div>
+                            <div>34</div>
+                          </div>
+                          <div class="emoji">
+                            <div><i class="fa-solid fa-face-sad-cry"></i></div>
+                            <div>21</div>
+                          </div>
+                          <div class="emoji">
+                            <div><i class="fa-solid fa-thumbs-up"></i></div>
+                            <div>68</div>
+                          </div>
+                          <div class="emoji">
+                            <div><i class="fa-solid fa-heart"></i></div>
+                            <div>4</div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <!-- Review Table -->
+          </div>
+          <!-- Charts -->
+
+          <!-- Suggestions for you -->
+          <div class="all-suggest">
+            <section>
+              <h2 class="title">Suggestions for you</h2>
+
+              <div class="Suggestions">
+                <div class="suggest">
+                  <div class="image">
+                    <img src="./images/glass.jpg" alt="suggest1" />
+                  </div>
+
+                  <div class="paragraph">
+                    <h3>Sun glassess</h3>
+                    <p>
+                      Buy sunglasses in January from the Alibaba website and
+                      sell them in June on Amazon
+                    </p>
+                  </div>
+
+                  <div class="likeandCount">
+                    <div class="like">
+                      <div class="icon">
+                        <i class="fa-solid fa-thumbs-up"></i>
+                      </div>
+                      <div class="icon">
+                        <i class="fa-solid fa-thumbs-down"></i>
+                      </div>
+                      <div class="num">25</div>
+                      <div class="num">12</div>
+                    </div>
+                    <div class="count">
+                      <p>View More</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="suggest">
+                  <div class="image">
+                    <img src="./images/Laptop.png" alt="suggest1" />
+                  </div>
+
+                  <div class="paragraph">
+                    <h3>Laptop</h3>
+                    <p>
+                      Buy sunglasses in January from the Alibaba website and
+                      sell them in June on Amazon
+                    </p>
+                  </div>
+
+                  <div class="likeandCount">
+                    <div class="like">
+                      <div class="icon">
+                        <i class="fa-solid fa-thumbs-up"></i>
+                      </div>
+                      <div class="icon">
+                        <i class="fa-solid fa-thumbs-down"></i>
+                      </div>
+                      <div class="num">25</div>
+                      <div class="num">12</div>
+                    </div>
+                    <div class="count">
+                      <p>View More</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="suggest">
+                  <div class="image">
+                    <img src="./images/Mackup.png" alt="suggest1" />
+                  </div>
+
+                  <div class="paragraph">
+                    <h3>Makeup</h3>
+                    <p>
+                      Buy sunglasses in January from the Alibaba website and
+                      sell them in June on Amazon
+                    </p>
+                  </div>
+
+                  <div class="likeandCount">
+                    <div class="like">
+                      <div class="icon">
+                        <i class="fa-solid fa-thumbs-up"></i>
+                      </div>
+                      <div class="icon">
+                        <i class="fa-solid fa-thumbs-down"></i>
+                      </div>
+                      <div class="num">25</div>
+                      <div class="num">12</div>
+                    </div>
+                    <div class="count">
+                      <p>View More</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+          <!-- Suggestions for you -->
+
+          <!-- Nlp Chart and Monthly Progress -->
+          <div class="chartsTwo">
+            <!-- Nlp Chart -->
+            <div class="nipChart">
+              <h2>NIP Chart</h2>
+              <img src="./images/chart.png" alt="" />
+            </div>
+            <!-- Nlp Chart -->
+
+            <!-- Progress -->
+            <div class="Monthly">
+              <h2>Monthly Progress</h2>
+              <div class="progressChar">
+                <div class="monthlyProgress">
+                  <div class="outer">
+                    <div class="inner">
+                      <div class="numberrr" data-num="80"></div>
+                    </div>
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    version="1.1"
+                    width="160px"
+                    height="160px"
+                  >
+                    <defs>
+                      <linearGradient id="GradientColor">
+                        <stop offset="0%" stop-color="#e91e63" />
+                        <stop offset="100%" stop-color="#673ab7" />
+                      </linearGradient>
+                    </defs>
+                    <circle cx="80" cy="80" r="70" stroke-linecap="round" />
+                  </svg>
+                </div>
+                <p>
+                  The results showed that <span>80% </span> of those who
+                  <br />recommend buying equipment products
+                </p>
+              </div>
+            </div>
+            <!-- Progress -->
+          </div>
+          <!-- Nlp Chart and Monthly Progress -->
+
+          <!-- Leaflet Js Map -->
+          <div class="HeatMap">
+            <h2>Heat Map</h2>
+            <div id="map"></div>
+          </div>
+          <!-- Leaflet Js Map -->
+        </div>
+
+        <div class="filters">
+          <h2>Filters</h2>
+
+          <div class="filter">
+            <!-- Images Social -->
+            <ul class="one">
+              <li class="active" data-cat=".sc">Social Media</li>
+              <li data-cat=".on">Online Store</li>
+            </ul>
+            <!-- Images Social -->
+
+            <div class="gallery">
+              <!-- Social -->
+              <div class="social">
+                <img
+                  decoding="async"
+                  class="sc"
+                  src="./images/Facebook.png"
+                  alt="Facebook"
+                />
+                <img
+                  decoding="async"
+                  class="sc"
+                  src="./images/twitter.png"
+                  alt="Twitter"
+                />
+                <img
+                  decoding="async"
+                  class="on"
+                  src="./images/amazon.png"
+                  alt="Amazon"
+                />
+                <img
+                  decoding="async"
+                  class="on"
+                  src="./images/alibaba.png"
+                  alt="Alibaba"
+                />
+              </div>
+              <!-- Social -->
+
+              <!-- Category -->
+              <div class="category sc">
+                <h2>Category</h2>
+                <div class="fruit-select">
+                  <img src="./images/menu.png" alt="fruit" />
+                  <select id="fruits" name="fruits">
+                    <option value="apple" selected>Apple</option>
+                    <option value="banana" selected>Banana</option>
+                    <option value="orange" selected>Orange</option>
+                  </select>
+                </div>
+              </div>
+              <!-- Category -->
+
+              <!--  Date And Time -->
+              <div class="dateAndTime">
+                <div>
+                  <h2>Date</h2>
+                  <input class="date-input" type="date" id="date" name="date" />
+                </div>
+                <div>
+                  <h2>Time</h2>
+                  <input class="time-input" type="time" id="time" name="time" />
+                </div>
+              </div>
+              <!--  Date And Time -->
+
+              <!-- Country -->
+              <div class="country sc">
+                <h2>Country</h2>
+                <div class="country-select">
+                  <i class="fa-solid fa-location-dot"></i>
+                  <select id="fruits" name="fruits">
+                    <option value="apple" selected>Jordan</option>
+                    <option value="banana" selected>Oman</option>
+                    <option value="orange" selected>Qatar</option>
+                  </select>
+                </div>
+              </div>
+              <!-- Country -->
+
+              <!-- Price -->
+              <div class="wrapper sc">
+                <h2>Price</h2>
+                <div class="wrapper-price">
+                  <div class="price-input">
+                    <div class="field">
+                      <span>Min</span>
+                      <input type="number" class="input-min" value="2500" />
+                    </div>
+                    <div class="separator">-</div>
+                    <div class="field">
+                      <span>Max</span>
+                      <input type="number" class="input-max" value="7500" />
+                    </div>
+                  </div>
+                  <div class="slider">
+                    <div class="progress"></div>
+                  </div>
+                  <div class="range-input">
+                    <input
+                      type="range"
+                      class="range-min"
+                      min="0"
+                      max="10000"
+                      value="2500"
+                      step="100"
+                    />
+                    <input
+                      type="range"
+                      class="range-max"
+                      min="0"
+                      max="10000"
+                      value="7500"
+                      step="100"
+                    />
+                  </div>
+                </div>
+              </div>
+              <!-- Price -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Main Content -->
+
+    <!-- Progress Bar -->
+    <script>
+      const numbers = document.querySelectorAll(".numberrr");
+      const svgEl = document.querySelectorAll("svg circle");
+      const counters = Array(numbers.length);
+      const intervals = Array(counters.length);
+      counters.fill(0);
+
+      numbers.forEach((number, index) => {
+        intervals[index] = setInterval(() => {
+          if (counters[index] === parseInt(number.dataset.num)) {
+            clearInterval(counters[index]);
+          } else {
+            counters[index] += 1;
+            number.innerHTML = counters[index] + "%";
+            svgEl[index].style.strokeDashoffset = Math.floor(
+              472 - 440 * parseFloat(number.dataset.num / 100)
+            );
+          }
+        }, 20);
+      });
+    </script>
+    <!-- Progress Bar -->
+
+    <!-- Heat Map -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="./JS/Map/data/line.js"></script>
+    <script src="./JS/Map/data/general.js"></script>
+    <script src="./JS/Map/data/point.js"></script>
+    <script src="./JS/Map/data/polygon.js"></script>
+    <script src="./JS/Map/data/nepaldata.js"></script>
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <script src="./JS/Map/data/usstates.js"></script>
+    <!-- Heat Map -->
+
+    <!--  Scroll and Slid Up -->
+    <script src="./JS/scrollUp.js"></script>
+    <!--  Scroll and Slid Up -->
+
+    <!-- Chart JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js"></script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="./JS/chart1.js"></script>
+    <script src="./JS/chart2.js"></script>
+    <script src="./JS/chart3.js"></script>
+    <script src="./JS/chart4.js"></script>
+    <script src="./JS/chart5.js"></script>
+    <script src="./JS/Progress.js"></script>
+    <script src="./JS/chartMap.js"></script>
+    <!-- Chart JS -->
+
+    <!-- Filters -->
+    <script src="./JS/filters.js"></script>
+    <!-- Filters -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
+  </body>
+</html>
