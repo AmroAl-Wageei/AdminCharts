@@ -1406,7 +1406,7 @@ svg {
   padding: 0;
 }
 .one li {
-  padding: 10px 10px;
+  padding: 10px 16px;
   font-weight: bold;
   cursor: pointer;
   background-color: var(--general-color);
