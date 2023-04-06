@@ -53,6 +53,7 @@ body {
 .sidebar-menu a {
   display: block;
   color: #1b1515;
+  color: #aca5a5;
   font-size: 1.1rem;
 }
 .sidebar-menu a:hover {
