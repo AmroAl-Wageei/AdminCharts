@@ -25,19 +25,20 @@ body {
 
 .sidebar {
   /* width: 100px; */
-  width: 80px;
+  width: 100px;
   position: fixed;
   height: 100%;
   z-index: 100;
   background: var(--general-color);
   top: 0;
-  left: 0;
+  left: -10;
 }
 
 .sidebar-brand {
   height: 90px;
   padding-left: 1rem 0rem 1rem 2rem;
   color: #fff;
+  margin-left: 20px;
 }
 
 /* .sidebar-menu {
@@ -262,9 +263,9 @@ main {
 }
 
 .card-content {
-  margin-left: 30px;
+  /* margin-left: 30px; */
   color: #f5f5f5;
-  margin-top: 15px;
+  margin-top: 35px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1379,6 +1380,7 @@ svg {
   .HeatMap {
     width: 60%;
     margin-right: 200px;
+    margin-bottom: 50px;
   }
 }
 @media screen and (max-width: 800px) {
