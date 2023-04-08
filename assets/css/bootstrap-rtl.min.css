@@ -182,7 +182,7 @@ address {
   font-style: normal;
   line-height: inherit;
 }
-ol,
+/* ol,
 ul {
   padding-right: 2rem;
 }
@@ -197,7 +197,7 @@ ol ul,
 ul ol,
 ul ul {
   margin-bottom: 0;
-}
+} */
 dt {
   font-weight: 500;
 }
