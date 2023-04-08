@@ -239,7 +239,7 @@ main {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
-  margin-left: 100px;
+  margin-left: 70px;
 }
 
 .cards .card {
@@ -251,6 +251,7 @@ main {
   align-items: center;
   justify-content: center;
   justify-content: space-between;
+  margin-left: 35px;
   /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4); */
 }
 .cards .two {
@@ -377,7 +378,7 @@ main {
 }
 .CustomerImpressionChart {
   width: 60%;
-  margin-right: 50px;
+  margin-right: 40px;
 }
 .ProgressChart {
   width: 30%;
@@ -829,7 +830,7 @@ td i {
   height: 315px;
   background-color: #ffffff;
   border-radius: 10px;
-  margin-right: 100px;
+  margin-right: 150px;
 }
 
 .suggest .image {
@@ -1223,7 +1224,7 @@ td i {
 
 .nipChart {
   margin-left: 20px;
-  margin-right: 35px;
+  margin-right: 145px;
 }
 .nipChart h2 {
   font-family: Manrope;
@@ -1720,10 +1721,6 @@ input[type="range"]::-moz-range-thumb {
 
 /* End Scroll bar */
 
-
-.heatttt {
-
-}
 /* ################################################################ */
 
 /* * {
