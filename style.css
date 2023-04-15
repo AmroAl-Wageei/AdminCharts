@@ -11,6 +11,9 @@
 body {
   background-color: var(--body-color);
 }
+ol, ul {
+  padding-left: 1rem!important;
+}
 :root {
   --main-color: #ff844b;
   --general-color: #ffffff;
@@ -83,6 +86,7 @@ body {
 }
 .logoMain {
   padding: 10px;
+  width:60px;
 }
 
 /* Sidebar */
